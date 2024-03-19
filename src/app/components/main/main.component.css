@@ -1,0 +1,158 @@
+/* ====================  Main Start========================== */
+main {
+  margin-top: 1.4rem !important;
+}
+
+main .date {
+  display: inline-block !important;
+  background-color: var(--color-light) !important;
+  border-radius: var(--border-radius-1) !important;
+  margin-top: 1rem !important;
+  padding: 0.5rem 1.6rem !important;
+}
+
+main .date input {
+  all: unset !important;
+  background-color: transparent !important;
+  color: var(--color-dark) !important;
+}
+
+main .insights {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 1.6rem !important;
+}
+
+main .insights>div {
+  background-color: var(--color-white) !important;
+  padding: var(--card-padding) !important;
+  border-radius: var(--card-border-radius) !important;
+  margin-top: 1rem !important;
+  box-shadow: var(--box-shadow) !important;
+  transition: all 300ms ease !important;
+}
+
+main .insights>div:hover {
+  box-shadow: none !important;
+}
+
+main .insights>div i {
+  background-color: var(--color-primary) !important;
+  padding: 0.5rem !important;
+  border-radius: 50% !important;
+  font-size: 2rem !important;
+  color: var(--color-white) !important;
+}
+
+main .insights>div.expenses i {
+  background-color: var(--color-danger) !important;
+}
+
+main .insights>div.incomes i {
+  background-color: var(--color-success) !important;
+}
+
+main .insights>div .middle {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+main .insights h3 {
+  margin: 1rem 0 0.6rem !important;
+  font-size: 1rem !important;
+}
+
+main .insights .progresss {
+  position: relative !important;
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+}
+
+main .insights svg {
+  width: 7rem !important;
+  height: 7rem !important;
+}
+
+main .insights svg circle {
+  fill: none !important;
+  stroke: var(--color-primary) !important;
+  stroke-width: 14 !important;
+  stroke-linecap: round !important;
+  transform: translate(5px, 5px) !important;
+}
+
+main .insights .sales svg circle {
+  stroke-dasharray: 200 !important;
+  stroke-dashoffset: -30 !important;
+}
+
+main .insights .expenses svg circle {
+  stroke-dasharray: 80 !important;
+  stroke-dashoffset: 20 !important;
+}
+
+main .insights .incomes svg circle {
+  stroke-dasharray: 110 !important;
+  stroke-dashoffset: 35 !important;
+}
+
+main .insights .progresss .number {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+main .insights small {
+  margin-top: 1.6rem !important;
+  display: block !important;
+}
+
+/* ============  RECENT ORDERS  ==============  */
+main .recent-orders {
+  margin-top: 2rem !important;
+}
+
+main .recent-orders h2 {
+  margin-bottom: 0.8rem !important;
+}
+
+main .recent-orders table {
+  background-color: var(--color-white) !important;
+  width: 100% !important;
+  border-radius: var(--card-border-radius) !important;
+  padding: var(--card-padding) !important;
+  text-align: center !important;
+  box-shadow: var(--box-shadow) !important;
+  transition: all 300ms ease !important;
+}
+
+main .recent-orders table:hover {
+  box-shadow: none !important;
+}
+
+main table tbody td {
+  height: 2.8rem !important;
+  border-bottom: 1px solid var(--color-light) !important;
+  color: var(--color-dark-variant) !important;
+}
+
+main table tbody tr:last-child td {
+  border: none !important;
+}
+
+main .recent-orders a {
+  text-align: center !important;
+  display: block !important;
+  margin: 1rem auto !important;
+  color: var(--color-primary) !important;
+}
+
+
+/* ====================  Main End========================== */

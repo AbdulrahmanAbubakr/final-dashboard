@@ -1,0 +1,53 @@
+<div class="container">
+    <!-- Aside start -->
+    <aside>
+        <div class="top">
+            <div class="logo" style="width: 50%;">
+                <img src="../../../assets/images/logo-no-background.png">
+                <h2>Dash<span class="danger">board</span></h2>
+            </div>
+            <div class="close" id="close-btn">
+                <i class="bi bi-x-circle"></i>
+            </div>
+        </div>
+        <div class="sidebar">
+         
+            <a routerLink="/dashboard/main">
+                <i class="bi bi-person-fill-gear"></i>
+                <h3>Dashboard</h3>
+            </a>
+            <a routerLink="/dashboard/user/all-users">
+                <i class="bi bi-person-fill"></i>
+                <h3>Users</h3>
+            </a>
+            <a routerLink="/dashboard/course-list">
+                <i class="bi bi-film"></i>
+                <h3>Courses</h3>
+            </a>
+
+            <a>
+                <i class="bi bi-envelope"></i>
+                <h3>Messages</h3>
+                <span class="message-count">3</span>
+            </a>
+
+            <a>
+                <i class="bi bi-exclamation-circle"></i>
+                <h3>Reports</h3>
+            </a>
+            <a>
+                <i class="bi bi-gear-fill"></i>
+                <h3>Settings</h3>
+            </a>
+            <a>
+                <i class="bi bi-plus"></i>
+                <h3>Add course</h3>
+            </a>
+            <a>
+                <i class="bi bi-box-arrow-left" (click)="logOutService()"></i>
+                <h3>Log out</h3>
+            </a>
+        </div>
+    </aside>
+    <!-- Aside end -->
+</div>

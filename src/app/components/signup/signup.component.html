@@ -1,0 +1,90 @@
+<div class="container p-5">
+    <form [formGroup]="form" (ngSubmit)="signUp()">
+        <div class="mb-3">
+            <label class="form-label">User name</label>
+            <input type="text" formControlName="fullName" class="form-control" [ngClass]="{
+                'is-invalid': form.controls['fullName'].invalid && form.controls['fullName'].touched,
+                'is-valid': form.controls['fullName'].valid && form.controls['fullName'].touched,
+                }">
+            <div *ngIf="form.controls['fullName'].invalid && form.controls['fullName'].touched"
+                class="invalid-feedback">
+                <span *ngIf="form.controls['fullName'].hasError('required')">
+                    Username is required
+                </span>
+                <span *ngIf="form.controls['fullName'].hasError('minlength')">
+                    username must be more than 8 characters
+                </span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="Email" formControlName="Email" class="form-control" [ngClass]="{
+                'is-invalid': form.controls['Email'].invalid && form.controls['Email'].touched,
+                'is-valid': form.controls['Email'].valid && form.controls['Email'].touched,
+                }">
+            <div *ngIf="form.controls['Email'].invalid && form.controls['Email'].touched" class="invalid-feedback">
+                <span *ngIf="form.controls['Email'].hasError('required')">
+                    Email is required
+                </span>
+                <span *ngIf="form.controls['Email'].hasError('pattern')">
+                    <ul>
+                        <li>The Email couldn't start or finish with a dot</li>
+                        <li>The Email shouldn't contain spaces into the string
+                        </li>
+                        <li>The Email shouldn't contain special chars (<:, *,ecc) </li>
+                        <li>The Email could contain dots in the middle of mail address before the &#64;
+                        </li>
+                        <li>The Email could contain a double domain ( '.de.org' or similar rarity)
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="Password" formControlName="Password" class="form-control" [ngClass]="{
+                    'is-invalid': form.controls['Password'].invalid && form.controls['Password'].touched,
+                    'is-valid': form.controls['Password'].valid && form.controls['Password'].touched,
+                    }">
+            <div *ngIf="form.controls['Password'].invalid && form.controls['Password'].touched"
+                class="invalid-feedback">
+                <span *ngIf="form.controls['Password'].hasError('required')">
+                    Password' is required
+                </span>
+                <span *ngIf="form.controls['Password'].hasError('minlength')">
+                    <ul>
+                        <li>Password must contain 1 number (0-9)
+                        </li>
+                        <li>Password must contain 1 uppercase letters
+                        </li>
+                        <li>Password must contain 1 lowercase letters
+                        </li>
+                        <li>Password must contain 1 non-alpha numeric number
+                        </li>
+                        <li>Password is 8-16 characters with no space
+                        </li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone number</label>
+            <input type="number" formControlName="phone" class=" form-control " [ngClass]="{
+                ' is-invalid': form.controls['phone'].invalid && form.controls['phone'].touched, 'is-valid' :
+                form.controls['phone'].valid && form.controls['phone'].touched, }">
+            <div *ngIf="form.controls['phone'].invalid && form.controls['phone'].touched" class="invalid-feedback">
+                <span *ngIf="form.controls['phone'].hasError('required')">
+                    Phone Number is required
+                </span>
+                <span *ngIf="form.controls['phone'].hasError('min')">
+                    Phone Number must be more than 11 numbers
+
+                </span>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="form.invalid" class="btn btn-success mt-3">sign up</button>
+    </form>
+</div>

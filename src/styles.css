@@ -1,1 +1,306 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*root variables*/
+:root {
+  /* Colors */
+  --color-primary: #7380ec !important;
+  --color-danger: #ff7780 !important;
+  --color-success: #41f1b6 !important;
+  --color-warning: #ffbb55 !important;
+  --color-white: #fff !important;
+  --color-info-dark: #7d8da1 !important;
+  --color-info-light: #dce1eb !important;
+  --color-dark: #363949 !important;
+  --color-light: rgba(132, 139, 200, 0.18) !important;
+  --color-primary-variant: #111e88 !important;
+  --color-dark-variant: #677483 !important;
+  --color-background: #f6f6f9 !important;
+
+  /* Radius */
+  --card-border-radius: 2rem !important;
+  --border-radius-1: 0.4rem !important;
+  --border-radius-2: 0.8rem !important;
+  --border-radius-3: 1.2rem !important;
+
+  /*PAdding*/
+  --card-padding: 1.8rem !important;
+  --padding-1: 1.2rem !important;
+
+  --box-shadow: 0 2rem 3rem var(--color-light) !important;
+}
+
+/* ============= DARK THEME VARIABLES */
+.dark-theme-variables {
+  --color-background: #181a1a !important;
+  --color-white: #202528 !important;
+  --color-dark: #edeffd !important;
+  --color-dark-variant: #a3bdcc !important;
+  --color-light: rgba(0, 0, 0, 0.4) !important;
+  --box-shadow: 0 2rem 3rem var(--color-light) !important;
+}
+
+
+
+html {
+  font-size: 14px !important;
+}
+
+body {
+  width: 100% !important;
+  height: 100vh !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.88rem !important;
+  background: var(--color-background) !important;
+  overflow-x: hidden !important;
+  user-select: none !important;
+  color: var(--color-dark) !important;
+}
+
+.body {
+  display: grid !important;
+  width: 96% !important;
+  margin: 0 auto !important;
+  gap: 1.8rem !important;
+  grid-template-columns: 14rem auto 23rem !important;
+}
+
+a {
+  color: var(--color-dark) !important;
+}
+
+img {
+  width: 100% !important;
+}
+
+h1 {
+  font-weight: 800 !important;
+  font-size: 1.8rem !important;
+}
+
+h2 {
+  font-size: 1.4rem !important;
+}
+
+h3 {
+  font-size: 0.87rem !important;
+}
+
+h4 {
+  font-size: 0.8rem !important;
+}
+
+h5 {
+  font-size: 0.77rem !important;
+}
+
+small {
+  font-size: 0.75rem !important;
+}
+
+.profile-photo {
+  width: 2.8rem !important;
+  height: 2.8rem !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+.text-muted {
+  color: var(--color-info-dark) !important;
+}
+
+p {
+  color: var(--color-dark-variant) !important;
+}
+
+b {
+  color: var(--color-dark) !important;
+}
+
+.primary {
+  color: var(--color-primary) !important;
+}
+
+.danger {
+  color: var(--color-danger) !important;
+}
+
+.success {
+  color: var(--color-success) !important;
+}
+
+.warning {
+  color: var(--color-warning) !important;
+}
+
+/* Aside */
+
+
+/* MEDIA QUERIES  */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 94% !important;
+    grid-template-columns: 7rem auto 23rem !important;
+  }
+
+  aside .logo h2 {
+    display: none !important;
+  }
+
+  aside .sidebar h3 {
+    display: none !important;
+  }
+
+  aside .sidebar a {
+    width: 5.6rem !important;
+  }
+
+  aside .sidebar a:last-child {
+    position: relative !important;
+    margin-top: 1.8rem !important;
+  }
+
+  main .insights {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  main .recent-orders {
+    width: 94% !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 2rem 0 0 8.8rem !important;
+  }
+
+  main .recent-orders table {
+    width: 83vw !important;
+  }
+
+  main table thead tr th:last-child,
+  main table thead tr th:first-child {
+    display: none !important;
+  }
+
+  main table tbody tr td:last-child,
+  main table tbody tr td:first-child {
+    display: none !important;
+  }
+}
+
+/* Small tablets and mobiles */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  aside {
+    position: fixed !important;
+    left: 0 !important;
+    background-color: var(--color-white) !important;
+    width: 18rem !important;
+    z-index: 3 !important;
+    box-shadow: 1rem 3rem 4rem var(--color-light) !important;
+    height: 100% !important;
+    padding-right: var(--card-padding) !important;
+    display: none !important;
+    animation: showMenu 400ms ease forwards !important;
+  }
+
+  @keyframes showMenu {
+    to {
+      left: 0 !important;
+    }
+  }
+
+  aside a {
+    padding: 2rem !important;
+  }
+
+  aside .logo {
+    margin-left: 1rem !important;
+  }
+
+  aside .logo h2 {
+    display: inline !important;
+  }
+
+  aside .sidebar h3 {
+    display: inline !important;
+  }
+
+  aside .sidebar a {
+    width: 100% !important;
+    height: 3.4rem !important;
+  }
+
+  aside .sidebar a:last-child {
+    position: absolute !important;
+    top: 40rem !important;
+  }
+
+  aside .close {
+    display: inline-block !important;
+    cursor: pointer !important;
+  }
+
+  main {
+    margin-top: 8rem !important;
+    padding: 0 1rem !important;
+  }
+
+  main .recent-orders {
+    position: relative !important;
+    margin: 3rem 0 0 0 !important;
+    width: 100% !important;
+  }
+
+  main .recent-orders table {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .right {
+    width: 94% !important;
+    margin: 0 auto 4rem !important;
+  }
+
+  .right .top {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    align-items: center !important;
+    padding: 0 0 0.8rem !important;
+    height: 4.6rem !important;
+    background-color: var(--color-white) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    z-index: 2 !important;
+    box-shadow: 0 1rem 1rem var(--color-light) !important;
+  }
+
+  .right .top .theme-toggler {
+    width: 4.4rem !important;
+    position: absolute !important;
+    left: 66% !important;
+  }
+
+  .right .profile .info {
+    display: none !important;
+  }
+
+  .right .top button {
+    all: unset !important;
+    display: inline-block !important;
+    background-color: transparent !important;
+    cursor: pointer !important;
+    color: var(--color-dark) !important;
+    position: absolute !important;
+    left: 1rem !important;
+  }
+
+  .right .top button i {
+    font-size: 2rem !important;
+  }
+}

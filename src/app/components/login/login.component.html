@@ -1,0 +1,61 @@
+<div class="container p-5 my-3 rounded">
+
+  <form [formGroup]="form" (ngSubmit)="login()">
+
+
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input type="email" formControlName="Email" class="form-control" [ngClass]="{
+              'is-invalid': form.controls['Email'].invalid && form.controls['Email'].touched,
+              'is-valid': form.controls['Email'].valid && form.controls['Email'].touched,
+              }">
+      <div *ngIf="form.controls['Email'].invalid && form.controls['Email'].touched" class="invalid-feedback">
+        <span *ngIf="form.controls['Email'].hasError('required')">
+          Email is required
+        </span>
+        <span *ngIf="form.controls['Email'].hasError('pattern')">
+          <ul>
+            <li>The email couldn't start or finish with a dot</li>
+            <li>The email shouldn't contain spaces into the string
+            </li>
+            <li>The email shouldn't contain special chars (<:, *,ecc) </li>
+            <li>The email could contain dots in the middle of mail address before the &#64;
+            </li>
+            <li>The email could contain a double domain ( '.de.org' or similar rarity)
+            </li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" formControlName="Password" class="form-control" [ngClass]="{
+                  'is-invalid': form.controls['Password'].invalid && form.controls['Password'].touched,
+                  'is-valid': form.controls['Password'].valid && form.controls['Password'].touched,
+                  }">
+      <div *ngIf="form.controls['Password'].invalid && form.controls['Password'].touched" class="invalid-feedback">
+        <span *ngIf="form.controls['Password'].hasError('required')">
+          Password' is required
+        </span>
+        <span *ngIf="form.controls['Password'].hasError('minlength')">
+          <ul>
+            <li>password must contain 1 number (0-9)
+            </li>
+            <li>password must contain 1 uppercase letters
+            </li>
+            <li>password must contain 1 lowercase letters
+            </li>
+            <li>password must contain 1 non-alpha numeric number
+            </li>
+            <li>password is 8-16 characters with no space
+            </li>
+          </ul>
+        </span>
+      </div>
+    </div>
+
+
+    <button type="submit" [disabled]="form.invalid" class="btn btn-success mt-3">login</button>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+.table.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  box-shadow: var(--box-shadow) !important;
+
+}
+
+.table.container:hover {
+  box-shadow: none !important;
+
+}
